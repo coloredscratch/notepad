@@ -1,0 +1,436 @@
+/* Body and general styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f7fa;
+    color: #333;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 0.3px;
+}
+
+body.dark-mode h2 {
+    color: #e0e0e0;
+}
+
+nav {
+    text-align: right;
+}
+
+#settingsBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #555;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#settingsBtn:hover {
+    background-color: #777;
+}
+
+/* Stylistic textboxes with black airy outline on hover */
+#noteTitle, #noteContent, #modalTitle, #modalContent {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+#noteTitle:hover, #noteContent:hover, #modalTitle:hover, #modalContent:hover {
+    border: 2px solid #000;
+}
+
+#noteTitle:focus, #noteContent:focus, #modalTitle:focus, #modalContent:focus {
+    border: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode #noteTitle,
+body.dark-mode #noteContent,
+body.dark-mode #modalTitle,
+body.dark-mode #modalContent {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+body.dark-mode #noteTitle:hover,
+body.dark-mode #noteContent:hover,
+body.dark-mode #modalTitle:hover,
+body.dark-mode #modalContent:hover {
+    border: 2px solid #fff;
+}
+
+body.dark-mode #noteTitle:focus,
+body.dark-mode #noteContent:focus,
+body.dark-mode #modalTitle:focus,
+body.dark-mode #modalContent:focus {
+    border: 1px solid #aaa;
+}
+
+#noteContent, #modalContent {
+    height: 300px;
+    resize: vertical;
+    font-size: 15px;
+}
+
+button {
+    padding: 12px 18px;
+    margin-right: 19px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #da190b;
+}
+
+#clearNBtn {
+    background-color: #F6841A;
+}
+
+#clearNBtn:hover {
+    background-color: #DC7C21;
+}
+
+#saveNoteBtn {
+    background-color: #0F85F3;
+}
+
+#saveNoteBtn:hover {
+    background-color: #0567C3;
+}
+
+#saveModalBtn {
+    background-color: #0F85F3;
+}
+
+#saveModalBtn:hover {
+    background-color: #0567C3;
+}
+
+#confirmDeleteBtn {
+    background-color: #F20B0D;
+}
+
+#confirmDeleteBtn:hover {
+    background-color: #B5090B;
+}
+
+#cancelDeleteBtn {
+    background-color: #63EF07;
+}
+
+#cancelDeleteBtn:hover {
+    background-color: #43A006;
+}
+
+#savedNotes {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+body.dark-mode #savedNotes {
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+}
+
+body.dark-mode #savedNotes p {
+    color: #e0e0e0;
+}
+
+.saved-note {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: 1.4;
+}
+
+body.dark-mode .saved-note {
+    border-bottom: 1px solid #444;
+}
+
+.saved-note:hover {
+    background-color: #f5f5f5;
+}
+
+body.dark-mode .saved-note:hover {
+    background-color: #383838;
+}
+
+.saved-note:last-child {
+    border-bottom: none;
+}
+
+.saved-note strong {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.saved-note small {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 4px;
+}
+
+body.dark-mode .saved-note small {
+    color: #aaa;
+}
+
+/* Edit button styling */
+.saved-note .edit-note-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.saved-note .edit-note-btn:hover {
+    background-color: #45a049;
+}
+
+/* Delete button styling for saved notes */
+.saved-note .delete-note-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Download button styling for saved notes */
+.saved-note .download-note-btn {
+    background-color: #888;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.saved-note .delete-note-btn:hover {
+    background-color: darkred;
+}
+
+.saved-note .download-note-btn:hover {
+    background-color: #666;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 15% auto;
+    padding: 40px; /* Increased padding for better spacing */
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+body.dark-mode .modal-content {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: #e0e0e0;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Settings Modal Specific Styles */
+#settingsModal .modal-content {
+    padding: 40px; /* Consistent padding */
+}
+
+#settingsModal h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+}
+
+#settingsModal p {
+    font-size: 15px;
+    margin-bottom: 25px; /* More space before buttons */
+    color: #555;
+}
+
+body.dark-mode #settingsModal p {
+    color: #ccc;
+}
+
+#deleteAllNotesBtn {
+    margin-bottom: 30px; /* Space before toggle */
+    width: 100%; /* Full width for consistency */
+    padding: 12px;
+}
+
+/* Dark Mode Toggle Styling */
+.dark-mode-toggle {
+    display: flex;
+    justify-content: space-between; /* Better alignment */
+    align-items: center;
+    margin-top: 20px; /* Space above toggle */
+}
+
+.dark-mode-toggle label[for="darkModeSwitch"] {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #333;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+body.dark-mode .dark-mode-toggle label[for="darkModeSwitch"] {
+    color: #e0e0e0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* Dark mode shadow */
+}
+
+/* Slider Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

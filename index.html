@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Notepad</h1>
+        <nav>
+            <button id="settingsBtn" class="settings-btn">⚙️</button>
+        </nav>
+        <input type="text" id="noteTitle" placeholder="Note Title">
+        <textarea id="noteContent" placeholder="Write your note here..."></textarea>
+        <div class="button-group">
+            <button id="saveNoteBtn" onclick="saveNote()">Save Note</button>
+            <button id="clearNBtn" onclick="confirmClearNote()" class="clear">Clear</button>
+        </div>
+
+        <h2>Saved Notes</h2>
+        <div id="savedNotes"></div>
+
+        <div id="noteModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">×</span>
+                <h3>Edit Note</h3>
+                <input type="text" id="modalTitle" placeholder="Note Title">
+                <textarea id="modalContent" placeholder="Note Content"></textarea>
+                <div class="modal-button-group">
+                    <button id="saveModalBtn" onclick="saveModalNote()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <span id="closeConfirmationModal" class="close">×</span>
+                <h3>Are you sure?</h3>
+                <p>This action cannot be undone.</p>
+                <div class="confirmation-button-group">
+                    <button id="confirmDeleteBtn">Yes</button>
+                    <button id="cancelDeleteBtn">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <span id="closeSettingsModal" class="close">×</span>
+                <h3>Settings</h3>
+                <p>Here you can modify your preferences and settings.</p>
+                <button id="deleteAllNotesBtn" onclick="confirmDeleteAllNotes()">Delete All Notes</button>
+                <div class="dark-mode-toggle">
+                    <label for="darkModeSwitch">Dark Mode</label>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeSwitch">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
